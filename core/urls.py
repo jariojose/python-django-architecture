@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('notebooks/', include('notebooks.urls')),
-    path('smartphones/', include('smartphones.urls'))
+    path('smartphones/', include('smartphones.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
