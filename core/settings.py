@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+#Environment Variable
+#Set export PROGRAMMING_FOLDER='/home/user/programming/' at .profile
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -84,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django',
         'USER': 'postgres',
-        'PASSWORD': '081992',
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
         'HOST': '127.0.0.1',
         'PORT': '59030',
     }
