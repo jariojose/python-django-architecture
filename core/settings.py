@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'notebooks.apps.NotebooksConfig'
+    'notebooks',
+    'smartphones'
 ]
 
 MIDDLEWARE = [

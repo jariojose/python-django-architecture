@@ -29,6 +29,9 @@ class Ram(models.Model):
     class Meta:
         ordering = ('capacity', )
 
+    def __str__(self):
+        return self.vendor
+
 
 class CPU(models.Model):
     core = models.CharField(max_length=2, default='3')
@@ -37,9 +40,15 @@ class CPU(models.Model):
     class Meta:
         ordering = ('core', )
 
+    def __str__(self):
+        return self.model_vendor
+
 
 class Storage(models.Model):
     capacity = models.CharField(max_length=3, choices=CAPACITY, default='HD')
+
+    def __str__(self):
+        return self.capacity
 
 
 class Notebook(models.Model):
@@ -49,3 +58,6 @@ class Notebook(models.Model):
     ram = models.ForeignKey(Ram, on_delete=models.CASCADE, null=True)
     cpu = models.ForeignKey(CPU, on_delete=models.CASCADE, null=True)
     storage = models.ForeignKey(Storage, on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.vendor + ' ' + self.model
